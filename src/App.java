@@ -22,6 +22,8 @@ public class App {
         RadarSensor radar = new RadarSensor("R1");
         LidarSensor lidar = new LidarSensor("L1");
         CameraSystem camera = new CameraSystem("C1");
+        WheelSpeedSensor frontWheelSpeed = new WheelSpeedSensor("FW1");
+        WheelSpeedSensor rearWheelSpeed = new WheelSpeedSensor("RW1");
 
         SensorData radarData = radar.getData();
         SensorData lidarData = lidar.getData();
@@ -44,7 +46,7 @@ public class App {
 
         // --- High-level simulation using abstracted components ---
         // Initializing Dependency Modules
-        SensorInputProvider sensorProvider = new SimulatedSensorProvider();
+        SensorInputProvider sensorProvider = new SimulatedSensorProvider(radar,lidar,camera,frontWheelSpeed,rearWheelSpeed);
         BrakeActuator brakeActuator = new SimulatedBrakeActuator();
         BrakeLogger logger = new BrakeLogger();
 

@@ -1,4 +1,4 @@
-package interface;
+package Interface_code;
 public class ControlPanel{
     private static double sensitivity = 10;
     private static int threshold;

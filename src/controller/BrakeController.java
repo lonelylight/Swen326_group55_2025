@@ -4,8 +4,8 @@ import hardware.BrakeActuator;
 import model.VehicleState;
 import sensors.SensorInputProvider;
 import diagnostics.BrakeLogger;
-import interface.Display;
-import interface.EmergencyIndicators;
+import Interface_code.Display;
+import Interface_code.EmergencyIndicators;
 /**
  * Core controller: responsible for decision making on brake timing, execution of brake commands and feedback validation.
  */
@@ -32,7 +32,11 @@ public class BrakeController {
      */
     public boolean engageEmergencyBraking() {
         logger.logInfo(">>> Initiating emergency braking...");
-        EmergencyIndicators.triggerEmergencyBraking(1.0);
+
+        Display display = new Display();
+        EmergencyIndicators emergencyIndicators = new EmergencyIndicators(display);
+        emergencyIndicators.triggerEmergencyBraking(1.0);
+
         int attempt = 0;
         boolean success = false;
 
@@ -49,7 +53,6 @@ public class BrakeController {
                 Thread.currentThread().interrupt();
             }
 
-            //TODO Getting the current state of the vehicle, a place where the person in charge of the sensors is responsible for simulating first the
             VehicleState state = sensorInput.getCurrentVehicleState();
 
             // Determine whether braking is successful according to the rules
