@@ -5,7 +5,7 @@ import model.VehicleState;
 import sensors.SensorInputProvider;
 import diagnostics.BrakeLogger;
 import interface.Display;
-
+import interface.EmergencyIndicators;
 /**
  * Core controller: responsible for decision making on brake timing, execution of brake commands and feedback validation.
  */
@@ -32,7 +32,7 @@ public class BrakeController {
      */
     public boolean engageEmergencyBraking() {
         logger.logInfo(">>> Initiating emergency braking...");
-
+        EmergencyIndicators.triggerEmergencyBraking(1.0);
         int attempt = 0;
         boolean success = false;
 

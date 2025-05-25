@@ -5,7 +5,7 @@ public class EmergencyIndicators{
         this.display = display;
     }
 
-    public void triggerEmergencyBraking(double intensity){
+    public static void triggerEmergencyBraking(double intensity){
         display.showVisualAlert("Emergency Braking! Intensity:" + intensity);
         display.playSound("emergency_brake_tone");
     }
