@@ -4,6 +4,7 @@ import hardware.BrakeActuator;
 import model.VehicleState;
 import sensors.SensorInputProvider;
 import diagnostics.BrakeLogger;
+import interface.Display;
 
 /**
  * Core controller: responsible for decision making on brake timing, execution of brake commands and feedback validation.
@@ -87,6 +88,9 @@ public class BrakeController {
      */
     private void alertDriver() {
         // TODO Calling the interface to warn the driver
-        System.out.println("[ALERT] Emergency braking failed. Manual intervention required!");
+        //System.out.println("[ALERT] Emergency braking failed. Manual intervention required!");
+        //Changed by Amit
+        Display display = new Display();
+        display.showVisualAlert("[ALERT] Emergency braking failed. Manual intervention required!");
     }
 }
