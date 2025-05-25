@@ -1,7 +1,7 @@
 package interface;
 
-//import model.VehicleState;
-import sensors.SensorInputProvider;
+import model.VehicleState;
+//import sensors.SensorInputProvider;
 public class DriverInterface{
     private Display display;
     private EmergencyIndicators indicators;
@@ -15,8 +15,8 @@ public class DriverInterface{
 
     public void updateStatus(){
         //VehicleState vehicle = new VehicleState();
-        //boolean sensor_status = vehicle.isSensorFaultDetected() 
-        SensorInputProvider sensor_status = new SensorInputProvider();
+        boolean sensor_status = VehicleState.isSensorFaultDetected();
+       
         indicators.showSystemStatus(sensor_status);
     }
 
