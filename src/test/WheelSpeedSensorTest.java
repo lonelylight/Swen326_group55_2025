@@ -3,7 +3,7 @@ package sensors.wheel;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class WheelSensorPairTest {
+public class WheelSpeedSensorTest {
     @Test
     void testRPMWithinExpectedRange() {
         WheelSensorPair wheelSensor = new WheelSensorPair("W1");
