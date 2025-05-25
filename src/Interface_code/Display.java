@@ -1,4 +1,4 @@
-package interface;
+package Interface_code;
 public class Display{
     public void showVisualAlert(String message){
         System.out.println("[Visual]" + message);
