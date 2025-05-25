@@ -1,12 +1,24 @@
 package sensors;
 
 public class SensorData {
-    public final double distance; // in meters
-    public final double speed;    // in km/h
+    private final double distanceMeters;
+    private final double speedKmH;
 
-    public SensorData(double distance, double speed) {
-        this.distance = distance;
-        this.speed = speed;
+    public SensorData(double distanceMeters, double speedKmH) {
+        this.distanceMeters = distanceMeters;
+        this.speedKmH = speedKmH;
+    }
+
+    public double getDistanceMeters() {
+        return distanceMeters;
+    }
+
+    public double getSpeedKmH() {
+        return speedKmH;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Distance: %.2f m, Speed: %.2f km/h", distanceMeters, speedKmH);
     }
 }
-
