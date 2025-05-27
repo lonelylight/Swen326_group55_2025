@@ -7,4 +7,6 @@ public class Display{
     public void playSound(String tone){
         System.out.println("[Sound] Playing tone:" + tone);
     }
+
+
 }

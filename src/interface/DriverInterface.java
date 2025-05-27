@@ -31,9 +31,9 @@ public class DriverInterface{
         controlPanel.toggleAEBS(!controlPanel.isAEBSActive());
     }
 
-    public void configureSetting(double sensitivity, double Lidarthreshold, double WheelThreshold){
+    public void configureSetting(double sensitivity, double LidarThreshold, double WheelThreshold){
         controlPanel.setSensitivity(sensitivity);
-        controlPanel.setLidarThreshold(Lidarthreshold);
+        controlPanel.setLidarThreshold(LidarThreshold);
         controlPanel.setWheelThreshold(WheelThreshold);
         
     }
