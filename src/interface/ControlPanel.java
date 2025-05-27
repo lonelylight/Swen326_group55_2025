@@ -1,21 +1,24 @@
+package interface;
 public class ControlPanel{
-    private static double sensitivity = 10;
+    private static double sensitivity = 10.0;
     private static double LidarThreshold = 2.0;
     private static double WheelThreshold = 50.0;
     private static boolean AEBSActive;
 
     public void setSensitivity(double level){
-
+        assert level < 50.0 && level > 0.0;
         this.sensitivity = level;
         System.out.println("[Settings] Sensitivity set to" + level);
     }
 
-    public void setLidarThreshold(int Threshold) {
+    public void setLidarThreshold(double Threshold) {
+        assert Threshold >= 1.0 && Threshold <= 5.0;
         this.LidarThresholdThreshold = Threshold;
         System.out.println("[Settings] Lidar Threshold set to " Threshold);
     }
 
-    public void setWheelThreshold(int Threshold) {
+    public void setWheelThreshold(double Threshold) {
+        assert Threshold >= 20.0 && Threshold <= 100.0;
         this.WheelThreshold = Threshold;
         System.out.println("[Settings] Wheel Speed Threshold set to " Threshold);
     }
@@ -30,11 +33,11 @@ public class ControlPanel{
         return sensitivity;
     }
 
-    public static int getLidarThreshold() {
+    public static double getLidarThreshold() {
         return LidarThreshold;
     }
 
-    public static int getWheelThreshold() {
+    public static double getWheelThreshold() {
         return WheelThreshold;
     }
 

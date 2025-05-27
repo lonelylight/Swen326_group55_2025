@@ -1,3 +1,4 @@
+package interface;
 public class EmergencyIndicators{
     private Display display;
 

@@ -1,4 +1,4 @@
-package Interface_code;
+package interface;
 
 import model.VehicleState;
 

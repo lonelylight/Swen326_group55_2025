@@ -39,6 +39,7 @@ public class LidarSensorTest {
         assertEquals("L4", lidar.getId(), "Lidar sensor ID should match the initialized value");
     }
 
+    //TC_10
     @Test
     void testLidarSensorIdValidation() {
         assertThrows(IllegalArgumentException.class, () -> {
