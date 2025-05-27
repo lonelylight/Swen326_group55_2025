@@ -7,15 +7,17 @@ public class DriverInterface{
     private EmergencyIndicators indicators;
     private ControlPanel controlPanel;
 
+
     public DriverInterface(){
         this.display = new Display();
         this.indicators = new EmergencyIndicators(display);
         this.controlPanel = new ControlPanel();
+        controlPanel.toggleAEBS(true);
     }
 
     public void updateStatus(){
-        VehicleState vehicle = new VehicleState();
-        boolean sensor = vehicle.isSensorFaultDetected() 
+        //VehicleState vehicle = new VehicleState();
+        boolean sensor = VehicleState.isSensorFaultDetected();
         
         indicators.showSystemStatus(sensor);
     }
@@ -25,13 +27,14 @@ public class DriverInterface{
         indicators.triggerEmergencyBraking(intensity);
     }
 
-    public void toggleAEBS(boolean active){
-        controlPanel.toggleAEBS(active)
+    public void toggleAEBS(){
+        controlPanel.toggleAEBS(!controlPanel.isAEBSActive());
     }
 
-    public void configureSetting(double sensitivity, int threshold){
+    public void configureSetting(double sensitivity, double Lidarthreshold, double WheelThreshold){
         controlPanel.setSensitivity(sensitivity);
-        controlPanel.setThreshold(threshold);
+        controlPanel.setLidarThreshold(Lidarthreshold);
+        controlPanel.setWheelThreshold(WheelThreshold);
         
     }
 

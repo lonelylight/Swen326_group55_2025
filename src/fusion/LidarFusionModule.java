@@ -2,6 +2,7 @@ package fusion;
 
 import sensors.LidarSensor;
 import sensors.SensorData;
+import interface.ControlPanel;
 
 public class LidarFusionModule {
     private final LidarSensor[] sensors;
@@ -22,8 +23,8 @@ public class LidarFusionModule {
     }
 
     private SensorData majorityVote(SensorData d1, SensorData d2, SensorData d3) {
-        double tol = 2.0; // tighter tolerance than radar
-
+        //double tol = 2.0; // tighter tolerance than radar
+        double tol = ControlPanel.getLidarThreshold();
         boolean d1d2 = closeEnough(d1, d2, tol);
         boolean d1d3 = closeEnough(d1, d3, tol);
         boolean d2d3 = closeEnough(d2, d3, tol);

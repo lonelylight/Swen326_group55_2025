@@ -2,6 +2,7 @@ package fusion;
 
 import sensors.WheelSpeedSensor;
 import sensors.WheelSpeedData;
+import interface.ControlPanel;
 
 public class WheelSpeedFusionModule {
     private final WheelSpeedSensor[] sensors;
@@ -22,8 +23,8 @@ public class WheelSpeedFusionModule {
     }
 
     private WheelSpeedData majorityVote(WheelSpeedData d1, WheelSpeedData d2, WheelSpeedData d3) {
-        double tol = 50.0; // RPM tolerance
-
+        //double tol = 50.0; // RPM tolerance
+        double tol = ControlPanel.getWheelThreshold();
         boolean d1d2 = closeEnough(d1, d2, tol);
         boolean d1d3 = closeEnough(d1, d3, tol);
         boolean d2d3 = closeEnough(d2, d3, tol);

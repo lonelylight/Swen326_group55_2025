@@ -33,9 +33,9 @@ public class BrakeController {
     public boolean engageEmergencyBraking() {
         logger.logInfo(">>> Initiating emergency braking...");
 
-        Display display = new Display();
-        EmergencyIndicators emergencyIndicators = new EmergencyIndicators(display);
-        emergencyIndicators.triggerEmergencyBraking(1.0);
+ 
+        
+        EmergencyIndicators.triggerEmergencyBraking(1.0);
 
         int attempt = 0;
         boolean success = false;
