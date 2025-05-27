@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RadarSensorTest {
-
+    //TC_13
     @Test
     void testRadarSensorReturnsValidData() {
         RadarSensor radar = new RadarSensor("R1");
@@ -14,14 +14,14 @@ public class RadarSensorTest {
         assertTrue(data.getDistanceMeters() >= 0 && data.getDistanceMeters() <= 100);
         assertTrue(data.getSpeedKmH() >= -50 && data.getSpeedKmH() <= 50);
     }
-
+    //TC_14
     @Test
     void testRadarSensorHandlesNullData() {
         RadarSensor radar = new RadarSensor("R2");
         radar.setData(null);
         assertNull(radar.getData(), "Radar should return null when data is not set");
     }
-
+    //TC_13
     @Test
     void testRadarSensorWithInvalidData() {
         RadarSensor radar = new RadarSensor("R3");
@@ -38,7 +38,7 @@ public class RadarSensorTest {
         assertNotNull(radar, "Radar sensor should be initialized properly");
         assertEquals("R4", radar.getId(), "Radar sensor ID should match the initialized value");
     }
-
+    //TC_10
     @Test
     void testRadarSensorIdValidation() {
         assertThrows(IllegalArgumentException.class, () -> {

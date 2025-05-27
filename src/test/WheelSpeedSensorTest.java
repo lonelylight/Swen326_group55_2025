@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class WheelSpeedSensorTest {
+    //TC_18
     @Test
     void testRPMWithinExpectedRange() {
         WheelSensorPair wheelSensor = new WheelSensorPair("W1");
@@ -25,7 +26,7 @@ public class WheelSpeedSensorTest {
         assertNotNull(wheelSensor, "WheelSensorPair should be initialized properly");
         assertEquals("W3", wheelSensor.getId(), "WheelSensorPair ID should match the initialized value");
     }
-
+    //TC_19
     @Test
     void testRPMHandlesNegativeValues() {
         WheelSensorPair wheelSensor = new WheelSensorPair("W4");

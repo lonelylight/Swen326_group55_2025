@@ -14,14 +14,14 @@ public class LidarSensorTest {
         assertTrue(data.getDistanceMeters() >= 0 && data.getDistanceMeters() <= 80, "Distance out of bounds");
         assertTrue(data.getSpeedKmH() >= -30 && data.getSpeedKmH() <= 30, "Speed out of bounds");
     }
-
+    //TC_09
     @Test
     void testLidarSensorHandlesNullData() {
         LidarSensor lidar = new LidarSensor("L2");
         lidar.setData(null);
         assertNull(lidar.getData(), "Lidar should return null when internal data is null");
     }
-
+    //TC_09
     @Test
     void testLidarSensorWithInvalidData() {
         LidarSensor lidar = new LidarSensor("L3");
@@ -31,7 +31,7 @@ public class LidarSensorTest {
         assertTrue(data.getDistanceMeters() < 0 || data.getDistanceMeters() > 80);
         assertTrue(data.getSpeedKmH() < -30 || data.getSpeedKmH() > 30);
     }
-    
+    //TC_09
     @Test
     void testLidarSensorInitialization() {
         LidarSensor lidar = new LidarSensor("L4");

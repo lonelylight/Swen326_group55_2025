@@ -14,7 +14,7 @@ public class SensorFusionTest {
         assertEquals(15.0, result.distance, 0.01);
         assertEquals(40.0, result.speed, 0.01);
     }
-    
+    //TC_16
     @Test
     void testFusionHandlesNullData() {
         SensorData radar = new SensorData(10, 50);
@@ -28,7 +28,7 @@ public class SensorFusionTest {
         assertEquals(lidar.distance, result.distance);
         assertEquals(lidar.speed, result.speed);
     }
-
+    //TC_16
     @Test
     void testFusionHandlesInvalidData() {
         SensorData radar = new SensorData(-5, 200); // Invalid distance and speed

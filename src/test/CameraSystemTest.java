@@ -15,13 +15,13 @@ public class CameraSystemTest {
             "Classification should be one of: vehicle, pedestrian, or none"
         );
     }
-
+    //TC_10
     @Test
     void testCameraSystemInitialization() {
         CameraSystem camera = new CameraSystem("C99");
         assertNotNull(camera);
     }
-
+    //TC_10
     @Test
     void testCameraSystemId() {
         CameraSystem camera = new CameraSystem("C100");
@@ -35,7 +35,7 @@ public class CameraSystemTest {
         String classification2 = camera.classifyObject();
         assertNotEquals(classification1, classification2, "Camera classification should vary on different calls");
     }
-
+    //TC_10
     @Test
     void testCameraHandlesInvalidId() {
         CameraSystem camera = new CameraSystem("");
@@ -43,7 +43,7 @@ public class CameraSystemTest {
             camera.getId();
         }, "Camera ID should not be empty");
     }
-
+    //TC_10
     @Test
     void testCameraHandlesNullId() {
         CameraSystem camera = new CameraSystem(null);
