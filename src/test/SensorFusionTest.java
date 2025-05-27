@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SensorFusionTest {
+    //TC_15
     @Test
     void testFusionAveragesCorrectly() {
         SensorData radar = new SensorData(10, 50);

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SensorMonitorTest {
+    //TC_17
     @Test
     void testSensorHealthCheck() {
         SensorData valid = new SensorData(25, 70);
@@ -12,7 +13,7 @@ public class SensorMonitorTest {
         assertTrue(SensorMonitor.isSensorHealthy(valid));
         assertFalse(SensorMonitor.isSensorHealthy(invalid));
     }
-
+    
     @Test
     void testTimeoutSimulation() {
         boolean seenTrue = false;

@@ -38,6 +38,25 @@ public class DriverInterface{
         
     }
 
+    public void showStatus(){
+        display.showVisualAlert(createStatusMessage());
+       
+    }
+
+    public String createStatusMessage(){
+        String message = "AEBS: "
+        if(controlPanel.isAEBSActive()){
+            message += "ON";
+        }
+        else{
+            message += "OFF";
+        }
+        message += "\nSensitivity: " + controlPanel.getSensitivity();
+        message += "\nLidar Threshold: " + controlPanel.getLidarThreshold();
+        message += "\nWheel Sensor Threshold: " + controlPanel.getWheelThreshold();
+        return message;
+    }
+
 
    
  

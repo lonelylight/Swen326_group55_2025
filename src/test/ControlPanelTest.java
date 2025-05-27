@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class ControlPanelTest{
+    //TC_05
     @Test
     void testAEBSToggle(){
         DriverInterface i = new DriverInterface();
@@ -22,7 +23,7 @@ public class ControlPanelTest{
         i.toggleAEBS();
         controller.evaluateAndBrake(new SensorData(5, 20), "vehicle"); // Should brake 
         }
-
+    //TC_11
     @Test
     void testSetting(){
         DriverInterface i = new DriverInterface();

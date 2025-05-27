@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CameraSystemTest {
-
+    //TC_08
     @RepeatedTest(10)
     void testCameraReturnsValidClassification() {
         CameraSystem camera = new CameraSystem("C1");
