@@ -25,6 +25,15 @@ public class radarSimulator {
         faultMode = true;
     }
 
+    public void enableStuckValueMode(){
+        stuckValueMode = true;
+    }
+
+    public void disableStuckValueMode(){
+        stuckValueMode = false;
+    }
+
+
     public double getReading(){
         if(faultMode){
             return new radarReading(sensorId, -1, -999).getDistanceMeters();

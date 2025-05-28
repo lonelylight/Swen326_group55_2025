@@ -10,7 +10,7 @@ import sensors.RadarSensor;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SimulatorTest {
+public class CameraSimulatorTest{
     
     //TC20
     @Test
@@ -38,10 +38,13 @@ public class SimulatorTest {
     @Test
     void testRadarSimulatorStuck() {
         radarSimulator sim1 = new radarSimulator("R1");
+        sim1.enableStuckValueMode();
         double speed = sim1.getReading();
-
-        assert(speed > 0.5);
-        assert(speed < 200);
+        double temp = speed;
+        speed = sim1.getReading();
+        assert(temp == speed);
 
     }
+
+    
 }
