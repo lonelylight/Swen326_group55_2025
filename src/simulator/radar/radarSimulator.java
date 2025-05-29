@@ -25,9 +25,18 @@ public class radarSimulator {
         faultMode = true;
     }
 
+    public void enableStuckValueMode(){
+        stuckValueMode = true;
+    }
+
+    public void disableStuckValueMode(){
+        stuckValueMode = false;
+    }
+
+
     public double getReading(){
         if(faultMode){
-            return new radarReading(sensorId, -1, -999);
+            return new radarReading(sensorId, -1, -999).getDistanceMeters();
         }
          
         double distance = 0;
@@ -40,7 +49,7 @@ public class radarSimulator {
         // Simulate relative speed between -MAX_RELATIVE_SPEED and +MAX_RELATIVE_SPEED
         double relativeSpeed = MAX_RELATIVE_SPEED + 2 * MAX_RELATIVE_SPEED * random.nextDouble();
 
-        return new radarReading(sensorId, distance, relativeSpeed);
+        return new radarReading(sensorId, distance, relativeSpeed).getDistanceMeters();
 
     }
 
