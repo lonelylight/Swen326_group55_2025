@@ -34,7 +34,7 @@ public class CameraSimulatorTest{
 
     }
 
-    //TC20
+    //TC24
     @Test
     void testRadarSimulatorStuck() {
         radarSimulator sim1 = new radarSimulator("R1");
